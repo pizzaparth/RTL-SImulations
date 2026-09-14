@@ -41,7 +41,7 @@ Each scene runs for about 24 seconds at 1080p60:
    - at the end of the step, that row of the truth table is written in.
 3. After the last step the highlight fades out and the finished table stays on screen.
 
-Visual style: black background, solid white drawing, bright yellow current dots. No grey is used anywhere.
+Visual style: black background, solid white drawing, bright yellow current dots, and a large, very faint diagonal "PARTH" watermark behind the circuit for the whole animation.
 
 ## How RTL works
 

@@ -164,6 +164,10 @@ class RTLGate(Scene):
         self.clock.add_updater(lambda m, dt: m.increment_value(dt))
         self.add(self.clock)
 
+        watermark = Text("PARTH", font=FONT, weight=BOLD, color=INK)
+        watermark.scale_to_fit_width(11).rotate(20 * DEGREES).set_opacity(0.07).set_z_index(-1)
+        self.add(watermark)
+
         circuit, texts, self.segs, combos = self.build()
         self.seg_len = {k: Flow(v, self.clock).L for k, v in self.segs.items()}
 
