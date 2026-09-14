@@ -14,7 +14,10 @@ DOT_R = 0.075
 HOLD = 4.5      # seconds of flow per input combination
 
 
-OFFSET = np.array([1.2, -0.1, 0.0])  # centres the circuit in the frame
+OFFSET = np.array([-0.4, -0.1, 0.0])  # shifts the circuit left, leaving room for the truth table
+
+TABLE_LEFT, TABLE_TOP = 4.3, 1.4
+COLS, ROW_H = [0.72, 0.72, 1.1], 0.58  # column widths for A, B, OUT
 
 
 def P(x, y):
@@ -170,29 +173,58 @@ class RTLGate(Scene):
         self.seg_len = {k: Flow(v, self.clock).L for k, v in self.segs.items()}
 
         title = label(self.title, 38, weight=BOLD).to_corner(UL, buff=0.45)
-        self.play(Create(circuit), Write(texts), Write(title), run_time=2.5)
+        table = self.empty_table()
+        self.play(Create(circuit), Write(texts), Write(title), Create(table), run_time=2.5)
 
         state = None
+        highlight = None
         flows = []
-        for combo in combos:
+        for row, combo in enumerate(combos, start=1):
             new_state = self.state_labels(combo)
+            new_highlight = Rectangle(width=sum(COLS), height=ROW_H, stroke_color=DOT, stroke_width=5)
+            new_highlight.move_to([TABLE_LEFT + sum(COLS) / 2, self.cell(row, 0)[1], 0])
             if state is None:
-                self.play(*[Write(m) for m in new_state], run_time=0.5)
+                self.play(*[Write(m) for m in new_state], Create(new_highlight), run_time=0.5)
+                state, highlight = new_state, new_highlight
             else:
                 for f in flows:
                     f.dying = self.clock.get_value()
-                self.play(*[Transform(o, n) for o, n in zip(state, new_state)], run_time=0.4)
+                self.play(*[Transform(o, n) for o, n in zip(state, new_state)],
+                          Transform(highlight, new_highlight), run_time=0.4)
                 self.remove(*flows)
-                new_state = state
-            state = new_state
 
             flows = self.make_flows(combo["chains"], combo.get("bases", {}))
             self.add(*flows)
-            self.wait(HOLD)
+            self.wait(HOLD - 1.0)
+
+            a, b = combo["AB"]
+            values = [label(str(v), 32).move_to(self.cell(row, col))
+                      for col, v in enumerate([a, b, combo["Q"]])]
+            self.play(*[Write(v) for v in values], run_time=0.5)
+            self.wait(0.5)
 
         for f in flows:
             f.dying = self.clock.get_value()
-        self.wait(0.4)
+        self.play(FadeOut(highlight), run_time=0.4)
+        self.wait(1.5)
+
+    def cell(self, row, col):
+        return np.array([TABLE_LEFT + sum(COLS[:col]) + COLS[col] / 2, TABLE_TOP - (row + 0.5) * ROW_H, 0.0])
+
+    def empty_table(self):
+        x0, x1 = TABLE_LEFT, TABLE_LEFT + sum(COLS)
+        y0, y1 = TABLE_TOP, TABLE_TOP - 5 * ROW_H
+        lines = VGroup(Rectangle(width=x1 - x0, height=y0 - y1, stroke_color=INK, stroke_width=4)
+                       .move_to([(x0 + x1) / 2, (y0 + y1) / 2, 0]))
+        for r in range(1, 5):
+            y = y0 - r * ROW_H
+            lines.add(Line([x0, y, 0], [x1, y, 0], stroke_color=INK, stroke_width=4 if r == 1 else 2.5))
+        for c in range(1, 3):
+            x = x0 + sum(COLS[:c])
+            lines.add(Line([x, y0, 0], [x, y1, 0], stroke_color=INK, stroke_width=4 if c == 2 else 2.5))
+        headers = VGroup(*[label(h, 30, weight=BOLD).move_to(self.cell(0, c))
+                           for c, h in enumerate(["A", "B", "OUT"])])
+        return VGroup(lines, headers)
 
     def make_flows(self, chains, bases):
         D = {}
