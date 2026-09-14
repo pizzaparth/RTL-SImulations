@@ -8,16 +8,16 @@ DOT = "#FFE600"
 WIRE = 4
 FONT = "Helvetica"
 
-SPACING = 0.30  # distance between current dots
-SPEED = 3.2     # units per second
+SPACING = 0.30
+SPEED = 3.2
 DOT_R = 0.075
-HOLD = 4.5      # seconds of flow per input combination
+HOLD = 4.5
 
 
-OFFSET = np.array([-0.4, -0.1, 0.0])  # shifts the circuit left, leaving room for the truth table
+OFFSET = np.array([-0.4, -0.1, 0.0])
 
 TABLE_LEFT, TABLE_TOP = 4.3, 1.4
-COLS, ROW_H = [0.72, 0.72, 1.1], 0.58  # column widths for A, B, OUT
+COLS, ROW_H = [0.72, 0.72, 1.1], 0.58
 
 
 def P(x, y):
@@ -81,7 +81,6 @@ def vcc(x, y_bottom, y_tip):
 
 
 def transistor(tx, ty, r=0.5):
-    """NPN symbol. Returns (mobject, key points)."""
     k = dict(
         base_in=(tx - r, ty),
         bar_m=(tx - 0.2, ty),
@@ -105,7 +104,6 @@ def transistor(tx, ty, r=0.5):
 
 
 def input_branch(name, x_term, y, x_base):
-    """Terminal -> R -> base lead. Returns (mobject, flow points)."""
     x0 = x_term + 0.09
     zig = zigzag_pts((-3.0, y), (-1.6, y))
     g = VGroup(
@@ -119,8 +117,6 @@ def input_branch(name, x_term, y, x_base):
 
 
 class Flow(VGroup):
-    """Evenly spaced dots moving at constant speed along a polyline."""
-
     def __init__(self, pts, clock, D=0.0, **kw):
         super().__init__(**kw)
         p = np.array([P(*q) for q in pts])
@@ -161,7 +157,6 @@ class RTLGate(Scene):
     title = ""
 
     def build(self):
-        """Return (circuit, segments, q_expr_mobject, positions, combos)."""
         raise NotImplementedError
 
     def construct(self):
