@@ -165,7 +165,7 @@ class RTLGate(Scene):
         self.add(self.clock)
 
         watermark = Text("PARTH", font=FONT, weight=BOLD, color=INK)
-        watermark.scale_to_fit_width(11).rotate(20 * DEGREES).set_opacity(0.07).set_z_index(-1)
+        watermark.scale_to_fit_width(11).rotate(20 * DEGREES).set_opacity(0.14).set_z_index(-1)
         self.add(watermark)
 
         circuit, texts, self.segs, combos = self.build()
