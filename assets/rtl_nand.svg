@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="930" height="775" viewBox="0 0 930 775">
+<rect width="100%" height="100%" fill="#000"/>
+<text x="25.0" y="58.7" font-family="Helvetica, Arial, sans-serif" font-size="38" font-weight="bold" fill="#fff" text-anchor="start">NAND using RTL</text>
+<polyline points="515.0,105.0 515.0,83.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="515.0,65.0 506.0,85.0 524.0,85.0" fill="#fff"/>
+<text x="515.0" y="48.1" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="normal" fill="#fff" text-anchor="middle">+Vcc</text>
+<polyline points="515.0,105.0 515.0,116.0 532.0,123.3 498.0,138.0 532.0,152.7 498.0,167.3 532.0,182.0 498.0,196.7 515.0,204.0 515.0,215.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="577.0" y="170.1" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="normal" fill="#fff" text-anchor="middle">R2</text>
+<circle cx="490.0" cy="395.0" r="50.0" fill="#000" stroke="#fff" stroke-width="3"/>
+<polyline points="440.0,395.0 470.0,395.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="470.0,423.0 470.0,367.0" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="470.0,383.0 515.0,352.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="470.0,407.0 515.0,438.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="506.0,431.8 495.2,414.0 485.5,428.0" fill="#fff"/>
+<circle cx="490.0" cy="605.0" r="50.0" fill="#000" stroke="#fff" stroke-width="3"/>
+<polyline points="440.0,605.0 470.0,605.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="470.0,633.0 470.0,577.0" fill="none" stroke="#fff" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="470.0,593.0 515.0,562.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="470.0,617.0 515.0,648.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="506.0,641.8 495.2,624.0 485.5,638.0" fill="#fff"/>
+<polyline points="515.0,215.0 515.0,275.0 515.0,352.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="515.0,275.0 705.0,275.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polygon points="725.0,275.0 705.0,266.0 705.0,284.0" fill="#fff"/>
+<text x="695.0" y="245.1" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="normal" fill="#fff" text-anchor="middle">OUT</text>
+<text x="695.0" y="330.1" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="normal" fill="#fff" text-anchor="middle">Q = <tspan text-decoration="overline">A·B</tspan></text>
+<circle cx="90.0" cy="395.0" r="9.0" fill="#000" stroke="#fff" stroke-width="3"/>
+<polyline points="99.0,395.0 190.0,395.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="190.0,395.0 204.0,395.0 213.3,378.0 232.0,412.0 250.7,378.0 269.3,412.0 288.0,378.0 306.7,412.0 316.0,395.0 330.0,395.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="330.0,395.0 440.0,395.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="260.0" y="360.1" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="normal" fill="#fff" text-anchor="middle">R</text>
+<text x="55.0" y="406.5" font-family="Helvetica, Arial, sans-serif" font-size="32" font-weight="normal" fill="#fff" text-anchor="middle">A</text>
+<circle cx="90.0" cy="605.0" r="9.0" fill="#000" stroke="#fff" stroke-width="3"/>
+<polyline points="99.0,605.0 190.0,605.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="190.0,605.0 204.0,605.0 213.3,588.0 232.0,622.0 250.7,588.0 269.3,622.0 288.0,588.0 306.7,622.0 316.0,605.0 330.0,605.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="330.0,605.0 440.0,605.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<text x="260.0" y="570.1" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="normal" fill="#fff" text-anchor="middle">R</text>
+<text x="55.0" y="616.5" font-family="Helvetica, Arial, sans-serif" font-size="32" font-weight="normal" fill="#fff" text-anchor="middle">B</text>
+<text x="585.0" y="405.1" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="normal" fill="#fff" text-anchor="middle">T1</text>
+<text x="585.0" y="615.1" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="normal" fill="#fff" text-anchor="middle">T2</text>
+<polyline points="515.0,438.0 515.0,562.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="515.0,648.0 515.0,715.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="489.0,715.0 541.0,715.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="499.0,725.0 531.0,725.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<polyline points="509.0,735.0 521.0,735.0" fill="none" stroke="#fff" stroke-width="3" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="515.0" cy="275.0" r="6.5" fill="#fff"/>
+<text x="790.0" y="492.1" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="normal" fill="#fff" text-anchor="middle">Transistor</text>
+<text x="790.0" y="528.1" font-family="Helvetica, Arial, sans-serif" font-size="28" font-weight="normal" fill="#fff" text-anchor="middle">Switches</text>
+</svg>
